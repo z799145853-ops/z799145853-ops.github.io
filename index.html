@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>交错领地 · 11×11 困难关</title><link rel="icon" href="data:,">
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:#273c33;background:#f6f4ec;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button{font:inherit;cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible{outline:3px solid #244e3a;outline-offset:3px}.page{max-width:1150px;margin:auto;padding:34px 32px 40px}.eyebrow{font-size:12px;color:#65766b;letter-spacing:2px}header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:26px}h1{font-size:35px;letter-spacing:-1px;margin:9px 0}header p{color:#66766b;margin:0;font-size:14px}.badge{border:1px solid #c8cfc0;border-radius:50px;padding:10px 17px;font-size:13px;white-space:nowrap}.layout{display:grid;grid-template-columns:minmax(0,690px) minmax(230px,1fr);gap:28px;align-items:start}.boardcard{background:#fffdf8;border:1px solid #e3e5d9;border-radius:23px;padding:21px}.bar{display:flex;justify-content:space-between;align-items:center;padding:0 8px 15px;font-size:14px}.found b{font-size:23px;margin-right:4px}.lives{color:#c7695c;letter-spacing:5px;font-size:21px}.boardwrap{padding-left:24px;padding-top:24px;position:relative}.labels-x{display:grid;grid-template-columns:repeat(11,1fr);position:absolute;left:24px;right:0;top:1px}.labels-y{position:absolute;top:24px;bottom:0;left:0;display:grid;grid-template-rows:repeat(11,1fr);width:20px}.labels-x span,.labels-y span{font-size:11px;color:#718075;text-align:center;align-self:center}#board{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:3px;touch-action:manipulation}.cell{aspect-ratio:1;border:none;border-radius:5px;position:relative;display:flex;align-items:center;justify-content:center;color:#263d34;font-size:clamp(14px,2.1vw,28px);padding:0;user-select:none;-webkit-user-select:none}.letter{position:absolute;left:4px;top:3px;font:9px -apple-system,sans-serif;opacity:.6;pointer-events:none}.mark{font-size:28px;font-weight:400;color:#fff;line-height:1}.cell.focus{box-shadow:inset 0 0 0 3px #294e3b}.cell.remove{box-shadow:inset 0 0 0 3px #d04f42}.cell.wrong{background:#e56c55!important;animation:shake .22s}.cell.answer{box-shadow:inset 0 0 0 2px #294e3b}.cell:hover{filter:brightness(.96)}.helptext{font-size:12px;color:#718075;text-align:center;margin:16px 0 0}.panel{padding:3px 0}.panel h2{font-size:15px;margin:0 0 15px}.rules{display:grid;gap:11px;font-size:13px;line-height:1.6;margin-bottom:28px}.rule{display:flex;gap:10px}.number{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#e4e9dc;font-size:11px}.modes{display:flex;background:#e9ede1;border-radius:12px;padding:4px;gap:4px;margin-bottom:13px}.mode{flex:1;border:0;padding:11px 0;background:transparent;color:#5a6d5e;border-radius:9px;font-size:13px}.mode.active{background:#fffdf8;color:#284a37;box-shadow:0 2px 6px #1935250c}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btn{border:1px solid #ccd5c5;border-radius:11px;background:transparent;padding:11px;color:#385440;font-size:13px}.btn.primary{background:#294c3a;color:#fff;border-color:#294c3a;grid-column:1/-1}.btn.soft{background:#e8eddf;border-color:#e8eddf}.status{background:#edf0e5;border-radius:13px;padding:15px;font-size:13px;line-height:1.7;margin:17px 0;min-height:98px}.status b{display:block;margin-bottom:3px;color:#294c3a}#apply{width:100%;margin-top:10px}footer{font-size:12px;color:#7d877d;line-height:1.8;margin-top:23px;border-top:1px solid #dfe4d6;padding-top:16px}details{margin-top:24px;border-top:1px solid #dfe4d6;padding-top:15px;font-size:13px}summary{cursor:pointer;color:#3c5e46}ol{padding-left:22px;line-height:1.9;font-size:12px;color:#617267}li{margin:8px 0}.caption{margin-top:13px;color:#7b8579;font-size:11px;line-height:1.8}#win{padding:10px 0;color:#2d6841;font-weight:600;display:none}@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}@media(max-width:760px){.page{padding:20px 13px}.layout{grid-template-columns:1fr;gap:22px}h1{font-size:29px}.boardcard{padding:13px}.cell{font-size:22px;border-radius:4px}.mark{font-size:23px}.letter{font-size:8px;left:3px;top:2px}header{margin-bottom:20px}.badge{font-size:11px;padding:9px}.panel{padding:0 6px}.rules{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.rule{font-size:12px;align-items:center}.number{width:20px;height:20px}.status{min-height:unset}.caption{font-size:11px}#board{gap:2px}.boardwrap{padding-left:20px;padding-top:22px}.labels-x{left:20px}.labels-y{top:22px;width:17px}}
+</style>
+<main class="page">
+<header><div><div class="eyebrow">CAT LOGIC · ORIGINAL PUZZLE</div><h1>交错领地</h1><p>找到每个颜色区域里，唯一的小猫。</p></div><span class="badge">11 × 11 · 困难挑战</span></header>
+<div class="layout"><section class="boardcard" aria-label="游戏区域"><div class="bar"><span class="found"><b id="count">0</b> / 11 只小猫</span><span id="lives" class="lives" aria-label="剩余3次机会">♥♥♥</span></div><div class="boardwrap"><div class="labels-x" id="cols"></div><div class="labels-y" id="rows"></div><div id="board" role="group" aria-label="11行11列棋盘"></div></div><p class="helptext">单击按当前模式操作，也可双击格子放猫。</p><div id="win" role="status">全部找到了！11 只猫都在自己的领地里。</div></section>
+<aside class="panel"><h2>三条规则</h2><div class="rules"><div class="rule"><span class="number">1</span><span>每种颜色恰好一只猫</span></div><div class="rule"><span class="number">2</span><span>每行、每列恰好一只猫</span></div><div class="rule"><span class="number">3</span><span>猫不能相邻，包括斜对角</span></div></div>
+<div class="modes"><button class="mode active" id="markmode" aria-pressed="true">× 标记排除</button><button class="mode" id="catmode" aria-pressed="false">🐱 确认放猫</button></div><div class="actions"><button class="btn" id="undo">撤销一步</button><button class="btn" id="reset">重新开始</button><button class="btn primary" id="hint">给我一个提示</button></div>
+<div class="status" aria-live="polite"><b id="statusTitle">从一个确定的位置开始</b><span id="message">标叉帮你记住排除结果；确认放错猫会失去一次机会。</span><button id="apply" class="btn soft" hidden>应用这一步</button></div>
+<button class="btn" id="answer">查看完整答案</button><div class="caption">字母 A—K 代表颜色区域，方便辨认。<br>这是独立关卡练习页，提示免费。</div><footer>原创 11×11 候选关 · 无预填猫<br>已做唯一解与连通性检查；难度待人工试玩确认。</footer>
+</aside></div>
+<details><summary>查看完整推理过程（含答案）</summary><ol id="trace"></ol></details>
+</main>
+<script>
+const PUZZLE={"name": "交错领地", "n": 11, "grid": [0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 3, 3, 3, 3, 3, 1, 3, 0, 2, 2, 0, 0, 3, 3, 3, 3, 3, 3, 6, 6, 4, 4, 3, 3, 3, 3, 3, 3, 3, 6, 6, 6, 4, 4, 3, 3, 3, 3, 3, 3, 6, 6, 6, 6, 6, 5, 5, 3, 3, 7, 3, 6, 6, 6, 6, 3, 3, 3, 3, 3, 7, 3, 6, 6, 6, 6, 6, 3, 3, 3, 7, 7, 7, 6, 9, 6, 6, 3, 3, 3, 3, 7, 7, 8, 9, 9, 6, 6, 3, 7, 7, 7, 7, 8, 8, 9, 10, 10, 6, 7, 7, 7, 7, 7, 7, 8], "solution": [5, 9, 1, 7, 4, 6, 3, 8, 10, 0, 2], "trace": [{"rule": "R1", "place": 20, "unit": [2, 1], "before": 121}, {"rule": "R2", "source": [2, [2]], "target": [0, [2]], "remove": [22, 25, 26, 27, 28, 29], "focus": [23, 24], "before": 96}, {"rule": "R2", "source": [2, [0]], "target": [0, [0]], "remove": [7], "focus": [0, 1, 2, 3, 4, 5, 6], "before": 90}, {"rule": "R2", "source": [2, [5]], "target": [0, [5]], "remove": [55, 56, 57, 58, 59, 62, 63, 65], "focus": [60, 61], "before": 89}, {"rule": "R2", "source": [2, [10]], "target": [0, [10]], "remove": [110, 113, 114, 115, 116, 117, 118, 120], "focus": [111, 112], "before": 81}, {"rule": "R2", "source": [2, [8]], "target": [1, [10]], "remove": [43, 54, 76, 87], "focus": [98, 109], "before": 73}, {"rule": "R3", "source": [2, [8, 9]], "target": [0, [8, 9]], "remove": [88, 90, 91, 92, 93, 94, 95, 96, 101, 102, 103, 104, 105, 106, 107], "focus": [89, 98, 99, 100, 109], "before": 69}, {"rule": "R1", "place": 85, "unit": [2, 7], "before": 54}, {"rule": "R2", "source": [1, [7]], "target": [2, [3]], "remove": [37, 38, 39, 49, 50, 70, 71, 72], "focus": [40, 51], "before": 41}, {"rule": "R2", "source": [0, [6]], "target": [2, [6]], "remove": [33, 34, 44, 45, 46], "focus": [66, 67, 68, 69], "before": 33}, {"rule": "R3", "source": [2, [2, 10]], "target": [1, [1, 2]], "remove": [1, 2, 35, 67, 68, 89, 100], "focus": [23, 24, 111, 112], "before": 28}, {"rule": "R1", "place": 98, "unit": [0, 8], "before": 21}, {"rule": "R1", "place": 99, "unit": [0, 9], "before": 19}, {"rule": "R1", "place": 69, "unit": [0, 6], "before": 15}, {"rule": "R1", "place": 40, "unit": [0, 3], "before": 11}, {"rule": "R1", "place": 48, "unit": [0, 4], "before": 9}, {"rule": "R1", "place": 61, "unit": [0, 5], "before": 6}, {"rule": "R1", "place": 5, "unit": [0, 0], "before": 4}, {"rule": "R1", "place": 112, "unit": [0, 10], "before": 3}, {"rule": "R1", "place": 23, "unit": [0, 2], "before": 1}], "basic_placed": 1, "basic_candidates": [0, 1, 2, 3, 4, 5, 6, 23, 24, 33, 34, 35, 36, 37, 38, 39, 40, 41, 44, 45, 46, 47, 48, 49, 50, 51, 52, 60, 61, 66, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 81, 82, 83, 84, 85, 88, 89, 90, 91, 92, 93, 94, 95, 96, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 109, 111, 112], "design_score": 50, "seed": 20261030, "attempt": 33781, "solution_count": 1, "search_nodes": 16, "connected": true, "total_attempts": 60000, "elapsed_seconds": 123.2};
+const COLORS=["#f4a7c5", "#76c6c2", "#aac8ed", "#b6a5dd", "#f6c476", "#a7cf89", "#82bad4", "#e69d86", "#d2b9d9", "#d5cd78", "#9eacca"];
+
+const N=11,G=PUZZLE.grid,S=PUZZLE.solution;let state=Array(121).fill(0),lives=3,history=[],mode='mark',pending=null,reveal=false,wrong=-1,clickTimer=null;
+const $=id=>document.getElementById(id), solutionSet=new Set(S.map((c,r)=>r*N+c));
+const units=[Array.from({length:N},(_,r)=>Array.from({length:N},(_,c)=>r*N+c)),Array.from({length:N},(_,c)=>Array.from({length:N},(_,r)=>r*N+c)),Array.from({length:N},(_,k)=>G.map((v,i)=>v===k?i:-1).filter(i=>i>=0))];
+const conflicts=(i,j)=>Math.floor(i/N)===Math.floor(j/N)||i%N===j%N||G[i]===G[j]||(Math.abs(Math.floor(i/N)-Math.floor(j/N))<=1&&Math.abs(i%N-j%N)<=1);
+function say(title,msg){$('statusTitle').textContent=title;$('message').textContent=msg}
+function finishHint(){pending=null;$('apply').hidden=true}
+function save(){history.push([...state]);if(history.length>150)history.shift()}
+function show(){
+ $('count').textContent=state.filter(x=>x===2).length;$('lives').textContent='♥'.repeat(lives)+'♡'.repeat(3-lives);$('lives').setAttribute('aria-label','剩余'+lives+'次机会');
+ const done=state.filter(x=>x===2).length===N;$('win').style.display=done?'block':'none';$('hint').disabled=done||lives===0;$('undo').disabled=!history.length||lives===0;
+ for(let i=0;i<121;i++){
+  const el=$('cell'+i);el.className='cell'+(pending?.focus?.includes(i)?' focus':'')+(pending?.remove?.includes(i)?' remove':'')+(wrong===i?' wrong':'')+(reveal&&solutionSet.has(i)?' answer':'');
+  const cat=state[i]===2||reveal&&solutionSet.has(i);el.querySelector('.symbol').textContent=cat?'🐱':state[i]===1?'×':'';el.querySelector('.symbol').className='symbol'+(!cat&&state[i]===1?' mark':'');
+  el.setAttribute('aria-label',`第${Math.floor(i/N)+1}行第${i%N+1}列，颜色${String.fromCharCode(65+G[i])}，${cat?'猫':state[i]===1?'排除':'空白'}`);
+ }
+}
+function operate(i,cat=false){
+ if(reveal){say('正在查看答案','先收起答案，再继续自己的推理。');return}if(lives===0||state.filter(x=>x===2).length===N)return;
+ finishHint();if(state[i]===2)return;
+ if(cat||mode==='cat'){
+  if(solutionSet.has(i)){save();state[i]=2;say('找到一只小猫','再看看它所在的行、列、颜色和周围，还有哪些位置能排除。')}
+  else{lives--;wrong=i;say(lives?'这里没有猫':'机会用完了',lives?'先整理一下候选位置，再确认下一只猫。':'点击“重新开始”，再挑战一次。');setTimeout(()=>{wrong=-1;show()},500)}
+ }else{save();state[i]=state[i]===1?0:1;say(state[i]?'已标记排除':'已取消排除','叉号记录你的判断，不会自动检查对错。')}
+ show();if(state.filter(x=>x===2).length===N)say('全部完成！','每行、每列、每种颜色各一只猫，而且彼此都不相邻。');
+}
+function choose(m){mode=m;for(const [id,v] of [['markmode','mark'],['catmode','cat']]){$(id).classList.toggle('active',v===m);$(id).setAttribute('aria-pressed',v===m)}}
+function combinations(a,k){const out=[];function f(start,x){if(x.length===k){out.push([...x]);return}for(let i=start;i<=a.length-k+x.length;i++){x.push(a[i]);f(i+1,x);x.pop()}}f(0,[]);return out}
+function describe(t){const kinds=['行','列','颜色'],ls=(a,x)=>x.map(i=>a===2?String.fromCharCode(65+i):i+1).join('、');if(t.rule==='R1'){const i=t.place;return `第${Math.floor(i/N)+1}行第${i%N+1}列，是${kinds[t.unit[0]]}${ls(t.unit[0],[t.unit[1]])}唯一剩余的位置，可以放猫。`}
+ const [a,ids]=t.source,[b,js]=t.target;return `${kinds[a]} ${ls(a,ids)} 的候选只落在${kinds[b]} ${ls(b,js)}。它们占满这些${kinds[b]}，因此可排除其他 ${t.remove.length} 个候选。`}
+function getHint(){
+ finishHint();const bad=state.findIndex((v,i)=>v===1&&solutionSet.has(i));if(bad>=0){pending={rule:'repair',focus:[bad],place:bad};say('先检查这个排除标记','这个叉号挡住了正确位置。可以取消它，再继续推理。');$('apply').hidden=false;$('apply').textContent='取消这个叉号';show();return}
+ const placed=state.map((v,i)=>v===2?i:-1).filter(i=>i>=0),cs=new Set(state.map((v,i)=>v===0&&!placed.some(p=>conflicts(i,p))?i:-1).filter(i=>i>=0));
+ const active=units.map((us,a)=>us.map((u,j)=>[j,u.filter(i=>cs.has(i))]).filter(([j,v])=>!units[a][j].some(i=>state[i]===2)));
+ for(let a=0;a<3;a++)for(const [j,v] of active[a])if(v.length===1){pending={rule:'R1',place:v[0],unit:[a,j],focus:v};break}
+ if(!pending)for(const k of [1,2,3,4,5,6]){
+  for(const [a,b] of [[2,0],[2,1],[0,2],[1,2]]){
+   if(k>=active[a].length)continue;
+   for(const comb of combinations(active[a],k)){
+    const sourceids=comb.map(x=>x[0]),v=comb.flatMap(x=>x[1]),ts=[...new Set(v.map(i=>b===0?Math.floor(i/N):b===1?i%N:G[i]))];
+    if(ts.length!==k)continue;const vs=new Set(v),rm=ts.flatMap(j=>units[b][j]).filter(i=>cs.has(i)&&!vs.has(i));
+    if(rm.length){pending={rule:k===1?'R2':k<=3?'R3':'R4',source:[a,sourceids],target:[b,ts],remove:rm,focus:v};break}
+   }if(pending)break;
+  }if(pending)break;
+ }
+ if(pending){say(pending.rule==='R1'?'找到一个确定的位置':'把这些候选一起考虑',describe(pending));$('apply').hidden=false;$('apply').textContent=pending.rule==='R1'?'放入这只猫':'应用这次排除'}else say('先整理已知信息','可以先标叉排除已放猫所在的行、列、颜色及相邻位置。');show();
+}
+function applyHint(){if(!pending)return;save();if(pending.rule==='repair')state[pending.place]=0;else if(pending.rule==='R1')state[pending.place]=2;else pending.remove.forEach(i=>state[i]=1);finishHint();say('已经应用','继续观察，有哪些区域因此只剩一个候选？');show()}
+for(let i=0;i<N;i++){for(const id of ['cols','rows']){const el=document.createElement('span');el.textContent=i+1;$(id).append(el)}}
+for(let i=0;i<121;i++){
+ const el=document.createElement('button');el.id='cell'+i;el.className='cell';el.style.background=COLORS[G[i]];el.innerHTML=`<span class="letter">${String.fromCharCode(65+G[i])}</span><span class="symbol"></span>`;
+ el.onclick=()=>{clearTimeout(clickTimer);clickTimer=setTimeout(()=>operate(i),220)};el.ondblclick=e=>{e.preventDefault();clearTimeout(clickTimer);operate(i,true)};
+ $('board').append(el);
+}
+$('markmode').onclick=()=>choose('mark');$('catmode').onclick=()=>choose('cat');$('hint').onclick=getHint;$('apply').onclick=applyHint;
+$('undo').onclick=()=>{if(history.length){state=history.pop();finishHint();say('已撤销一步','此前损失的机会不会恢复。');show()}};
+$('reset').onclick=()=>{clearTimeout(clickTimer);choose('mark');state=Array(121).fill(0);lives=3;history=[];reveal=false;wrong=-1;finishHint();$('answer').textContent='查看完整答案';say('重新开始','可以从单格颜色区域寻找第一个确定位置。');show()};
+$('answer').onclick=()=>{reveal=!reveal;finishHint();$('answer').textContent=reveal?'收起完整答案':'查看完整答案';say(reveal?'正在展示完整答案':'已收起答案',reveal?'答案仅供核对。收起后，自己的标记还在。':'继续自己的推理。');show()};
+for(const t of PUZZLE.trace){const li=document.createElement('li');li.textContent=describe(t);$('trace').append(li)}
+show();
+</script></html>
